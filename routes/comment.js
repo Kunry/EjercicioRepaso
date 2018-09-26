@@ -1,9 +1,15 @@
 const express = require('express');
 const router  = express.Router();
 const Comment = require("../models/Comment")
+const isRol = require("../middelwares/isRol")
 
 
-router.get("/", (req, res) => {
+
+
+
+
+router.get("/", [isRol(undefined, "/peliculas/pepe")],(req, res) => {
+
   Comment.find()
   .populate("author", "username")
   .populate("destinatario")

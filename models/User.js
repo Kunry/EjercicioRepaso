@@ -4,7 +4,7 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  rol: [{type:String}],
+  rol: {type:String, enum:["Admin", "DonPepe", "User"]} ,
   comment:[{type:Schema.Types.ObjectId, ref:"Comment"}]
 }, {
   timestamps: {
