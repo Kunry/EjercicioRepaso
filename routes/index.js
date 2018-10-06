@@ -18,7 +18,7 @@ router.get("/juan", (req,res) => {
   const users = [{name:"Pepe"}, {name:"lolo"}, {name:"kike"}];
 
   res.render("kike/prueba1",  {users})
-
+  console.log("Es una rama diferente")
 })
 
 module.exports = router;
